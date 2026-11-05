@@ -1,0 +1,47 @@
+// position absolute
+@mixin pos-center($align: both) {
+  position: absolute;
+  @if $align == 'center'{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  @if $align == 'vertical'{
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+  } 
+  @if $align == 'horizontal'{
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+  } 
+    @else if $align == 'both' {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+}
+
+@mixin pos-fixed($align: center) {
+  position: fixed;
+  @if $align == 'center'{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  @else if $align == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+}
+
